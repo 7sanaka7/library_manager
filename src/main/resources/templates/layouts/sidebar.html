@@ -33,6 +33,16 @@
                 </form>
             </li>
         </ul>
+         <ul sec:authorize="isAuthenticated()" class="nav">
+            <li class="user panel-body">
+                <!-- ログイン中のユーザー名 -->
+                <p>○○さんがログイン中</p>
+            </li>
+        </ul>
+        
+        <form th:action="@{/logout}" method="post">
+        <input type="submit" value="ログアウト" />
+    </form>
     </div>
 </div>
 </body>
