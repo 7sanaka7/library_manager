@@ -5,9 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "Libraries")
 public class Library {
@@ -26,6 +27,9 @@ public class Library {
 		
 		@Column(name = "PASSWORD")
 		private String password;
+		
+		@Column(name = "USER_ID")
+		private Integer userid;
 		
 		public Integer getId() {
 	        return this.id;
@@ -58,4 +62,22 @@ public class Library {
 	    public void setPassword(String password) {
 	    	this.password = password;
 	    }
+	    
+	    public Integer getUserId() {
+			return this.userid;
+		}
+		
+		public void setUserId(Integer id) {
+			this.userid = userid;
+		}
+		
+		 @ManyToOne
+		    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+		    private User user;
+
+		    public User getUser() {
+		        return this.user;
+		    }
+		    
+		    
 }
