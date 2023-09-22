@@ -1,16 +1,19 @@
 package com.example.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
-@Table(name = "Libraries")
+@Table(name = "LIBRARIES")
 public class Library {
 		
 		@Id
@@ -22,14 +25,12 @@ public class Library {
 		@Column(name = "NAME")
 		private String name;
 		
-		@Column(name = "EMAIL")
-		private String email;
-		
-		@Column(name = "PASSWORD")
-		private String password;
-		
 		@Column(name = "USER_ID")
-		private Integer userid;
+		private Integer userId;
+		
+		 @OneToMany(mappedBy = "library", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+		   private List<Log> logs;
+		    
 		
 		public Integer getId() {
 	        return this.id;
@@ -47,37 +48,18 @@ public class Library {
 	        this.name = name;
 	    }
 	    
-	    public String getEmail() {
-	    	return this.email;
-	    }
-		
-	    public void setEmail(String email) {
-	    	this.email = email;
-	    }
-	    
-	    public String getPassword() {
-	    	return this.password;
-	    }
-		
-	    public void setPassword(String password) {
-	    	this.password = password;
-	    }
 	    
 	    public Integer getUserId() {
-			return this.userid;
+			return this.userId;
 		}
 		
-		public void setUserId(Integer id) {
-			this.userid = userid;
+		public void setUserId(Integer userId) {
+			this.userId = userId;
 		}
 		
-		 @ManyToOne
-		    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-		    private User user;
-
-		    public User getUser() {
-		        return this.user;
-		    }
-		    
+		public List<Log> getLibraries(){
+			return logs;
+		}
+		
 		    
 }

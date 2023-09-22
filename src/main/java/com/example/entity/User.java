@@ -1,15 +1,10 @@
 package com.example.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -34,7 +29,7 @@ public class User {
 
 
 	    public Integer getId() {
-	        return this.id;
+	        return id;
 	    }
 
 	    public void setId(Integer id) {
@@ -42,7 +37,7 @@ public class User {
 	    }
 
 	    public String getName() {
-	        return this.name;
+	        return name;
 	    }
 
 	    public void setName(String name) {
@@ -50,7 +45,7 @@ public class User {
 	    }
 
 	    public String getEmail() {
-	        return this.email;
+	        return email;
 	    }
 
 	    public void setEmail(String email) {
@@ -58,19 +53,13 @@ public class User {
 	    }
 
 	    public String getPassword() {
-	        return this.password;
+	        return password;
 	    }
 
 	    public void setPassword(String password) {
 	        this.password = password;
 	    }
 	    
-	    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	    private List<Library> libraries;
-
-	    public List<Library> getLibraries() {
-	        return this.libraries;
-	    }
 	    
 	    
 	}

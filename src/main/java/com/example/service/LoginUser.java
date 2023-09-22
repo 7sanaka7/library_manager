@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.entity.User;
@@ -23,41 +24,42 @@ public class LoginUser implements UserDetails {
 	public String getUsername() {
 		return this.user.getEmail();
 	}
+	
+	@Override
+	public String getPassword() {
+		// TODO 自動生成されたメソッド・スタブ
+		return this.user.getPassword();
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return AuthorityUtils.NO_AUTHORITIES;
 	}
 
-	@Override
-	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 	
 	

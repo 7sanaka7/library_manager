@@ -7,13 +7,13 @@
 <div th:fragment="sidebar" class="sidebar" data-background-color="white" data-active-color="danger">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="library.html" class="simple-text">
+            <a href="/library" class="simple-text">
                 XX  Library
             </a>
         </div>
         <ul class="nav">
             <li class="active">
-                <a href="index">
+                <a href="/library">
                     <i class="ti-book"></i>
                     <p>Book List</p>
                 </a>
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="link">
-                <form action="">
+                <form action="@{/logout}" th:method="post">
                     <button>
                         <i class="ti-back-left"></i>
                         Logout
@@ -35,14 +35,9 @@
         </ul>
          <ul sec:authorize="isAuthenticated()" class="nav">
             <li class="user panel-body">
-                <!-- ログイン中のユーザー名 -->
-                <p>○○さんがログイン中</p>
+                <p><span sec:authentication="principal.user.name"></span>さんがログイン中</p>
             </li>
         </ul>
-        
-        <form th:action="@{/logout}" method="post">
-        <input type="submit" value="ログアウト" />
-    </form>
     </div>
 </div>
 </body>
