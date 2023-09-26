@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Libraries")
+@Table(name = "LIBRARIES")
 public class Library {
 		
 		@Id
@@ -21,8 +21,8 @@ public class Library {
 		@Column(name = "NAME")
 		private String name;
 		
-		@Column(name = "USER_ID")
-		private String userId;
+		//@Column(name = "USER_ID")
+		//private String userId;
 
 		
 		public Integer getId() {
@@ -41,12 +41,12 @@ public class Library {
 	        this.name = name;
 	    }
 
-		public String getUserId() {
-			return userId;
-		}
+		//public String getUserId() {
+		//	return userId;
+		//}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		//public void setUserId(String userId) {
+		//	this.userId = userId;
+		//}
 	    
 }
