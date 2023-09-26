@@ -25,6 +25,7 @@ public class Library {
 		@Column(name = "NAME")
 		private String name;
 		
+
 		@Column(name = "USER_ID")
 		private Integer userId;
 		
@@ -47,7 +48,8 @@ public class Library {
 	    public void setName(String name) {
 	        this.name = name;
 	    }
-	    
+
+	   
 	    
 	    public Integer getUserId() {
 			return this.userId;

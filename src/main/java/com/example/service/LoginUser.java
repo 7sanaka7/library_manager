@@ -27,13 +27,11 @@ public class LoginUser implements UserDetails {
 	
 	@Override
 	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
 		return this.user.getPassword();
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
 		return AuthorityUtils.NO_AUTHORITIES;
 	}
 

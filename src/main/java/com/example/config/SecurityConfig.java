@@ -12,6 +12,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	 @Override
+	    public void configure(WebSecurity web) throws Exception {
+	       
+	        web.ignoring().antMatchers("/css/**", "/js/**");
+	    }
+	 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.authorizeRequests()
@@ -32,11 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logoutSuccessUrl("/loginForm"); 
 	}
 	
-	 @Override
-	    public void configure(WebSecurity web) throws Exception {
-	       
-	        web.ignoring().antMatchers("/css/**", "/js/**");
-	    }
+	
 	 
 	 // ハッシュアルゴリズムの定義
 	    @Bean

@@ -63,7 +63,7 @@ public class LibraryController {
 		log.setReturnDueDate(LocalDateTime.parse(returnDueDate +"00:00:00", formatter));
 		log.setReturnDate(null);
 		logService.create(log);
-		return"redirect:/library";
+		return "redirect:/library";
 	}
 		
 		@PostMapping("/return")
@@ -78,7 +78,7 @@ public class LibraryController {
 			return "redirect:/library";
 		}
 		
-		@GetMapping("/return")
+		@GetMapping("/history")
 		public String history(Model model, @AuthenticationPrincipal LoginUser loginUser) {
 			List<Log> logs = logService.findByUserId(loginUser.getUser().getId());
 			model.addAttribute("logs", logs);
