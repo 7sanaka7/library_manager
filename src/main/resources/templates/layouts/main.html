@@ -24,7 +24,7 @@
 	<div class="wrapper">
 		<div th:replace="~{layouts/sidebar :: sidebar}"></div>
 		<div class="main-panel">
-			<div th:replace="~{content}"></div>
+			<div th:replace="${content}"></div>
 			<div th:replace="~{layouts/footer :: footer}"></div>
 
 		</div>
