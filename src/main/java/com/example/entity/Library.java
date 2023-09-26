@@ -9,7 +9,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "libraries")
+
+@Table(name = "LIBRARIES")
 public class Library {
 		
 		@Id
@@ -20,6 +21,10 @@ public class Library {
 		
 		@Column(name = "NAME")
 		private String name;
+		
+		//@Column(name = "USER_ID")
+		//private String userId;
+
 		
 		public Integer getId() {
 	        return this.id;
@@ -36,5 +41,13 @@ public class Library {
 	    public void setName(String name) {
 	        this.name = name;
 	    }
-		
+
+		//public String getUserId() {
+		//	return userId;
+		//}
+
+		//public void setUserId(String userId) {
+		//	this.userId = userId;
+		//}
+	    
 }
