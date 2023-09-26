@@ -9,6 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+
 @Table(name = "LIBRARIES")
 public class Library {
 		
