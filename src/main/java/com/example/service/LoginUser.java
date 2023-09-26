@@ -23,6 +23,11 @@ public class LoginUser implements UserDetails {
 	public String getUsername() {
 		return this.user.getEmail();
 	}
+	
+	@Override
+	public String getPassword() {
+		return this.user.getPassword();
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -30,11 +35,6 @@ public class LoginUser implements UserDetails {
 		return null;
 	}
 
-	@Override
-	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 
 	@Override
 	public boolean isAccountNonExpired() {

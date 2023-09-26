@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="link">
-                <form action="">
+                <form th:action="@{/logout}" th:method="post">
                     <button>
                         <i class="ti-back-left"></i>
                         Logout
@@ -35,8 +35,8 @@
         </ul>
          <ul sec:authorize="isAuthenticated()" class="nav">
             <li class="user panel-body">
-                <!-- ログイン中のユーザー名 -->
-                <p>○○さんがログイン中</p>
+                
+                <p><span sec:authentication="principal.user.name"></span>さんがログイン中</p>
             </li>
         </ul>
         
