@@ -90,4 +90,7 @@ public class Log {
 	public void setReturnDueDate(LocalDateTime returnDueDate) {
 		this.returnDueDate = returnDueDate;
 	}
+	public Library getLibrary() {
+		return library;
+	}
 }
