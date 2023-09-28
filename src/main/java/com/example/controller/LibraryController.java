@@ -60,7 +60,7 @@ public class LibraryController {
 		log.setRentDate(LocalDateTime.now());
 		log.setReturnDate(null);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss");
-		log.setReturnDueDate(LocalDateTime.parse(returnDueDate +"00:00:00", formatter));
+		log.setReturnDueDate(LocalDateTime.parse(returnDueDate +" 00:00:00", formatter));
 		log.setReturnDate(null);
 		logService.create(log);
 		return "redirect:/library";
