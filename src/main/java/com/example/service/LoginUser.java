@@ -32,11 +32,10 @@ public class LoginUser implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
 		return AuthorityUtils.NO_AUTHORITIES;
 	}
 
-
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ

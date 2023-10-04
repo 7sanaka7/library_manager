@@ -29,7 +29,7 @@ public class User {
 
 
 	    public Integer getId() {
-	        return this.id;
+	        return id;
 	    }
 
 	    public void setId(Integer id) {
@@ -37,7 +37,7 @@ public class User {
 	    }
 
 	    public String getName() {
-	        return this.name;
+	        return name;
 	    }
 
 	    public void setName(String name) {
@@ -45,7 +45,7 @@ public class User {
 	    }
 
 	    public String getEmail() {
-	        return this.email;
+	        return email;
 	    }
 
 	    public void setEmail(String email) {
@@ -53,10 +53,13 @@ public class User {
 	    }
 
 	    public String getPassword() {
-	        return this.password;
+	        return password;
 	    }
 
 	    public void setPassword(String password) {
 	        this.password = password;
 	    }
+	    
+	    
+	    
 	}
